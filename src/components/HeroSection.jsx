@@ -7,27 +7,22 @@ import { personal } from '../data/portfolioData';
  * It steps through each character of `text` every `speed` ms.
  */
 function TypingText({ text, speed = 150 }) {
-  const [displayed, setDisplayed] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    // Reset if text changes
-    setDisplayed('');
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < text.length -1) {
-        setDisplayed((prev) => prev + text[i]);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, speed);
-    return () => clearInterval(interval);
-  }, [text, speed]);
+    setIndex(0);
+  }, [text]);
+
+  useEffect(() => {
+    if (index >= text.length) return;
+    const timer = setTimeout(() => setIndex((i) => i + 1), speed);
+    return () => clearTimeout(timer);
+  }, [index, text, speed]);
 
   return (
     <p>
-      {'>'}
-      <span>{displayed}</span>
+      {'> '}
+      <span>{text.slice(0, index)}</span>
       <span className="cursor">▌</span>
     </p>
   );
