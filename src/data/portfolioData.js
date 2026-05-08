@@ -1,7 +1,7 @@
 // ─── Personal Info ────────────────────────────────────────────────────────────
 export const personal = {
   name: 'David Hernandez',
-  typedName: 'David Hernandez',
+  typedName: ' David Hernandez',
   location: 'Los Angeles, CA',
   email: 'davidhndz1@icloud.com',
   github: 'https://github.com/davidhndz',
