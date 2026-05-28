@@ -18,7 +18,6 @@ function MeCard({ card, index }) {
     <div
       ref={ref}
       className={`me-card ${card.animation}`}
-      style={isReversed ? { flexDirection: 'row-reverse' } : {}}
     >
       <div className="me-text">
         <p>{card.text}</p>
