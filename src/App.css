@@ -26,7 +26,6 @@ html, body {
   opacity: 0;
   transform: translateX(-25%);
   transition: all 1s;
-  transition-delay: 200ms;
 }
 
 .hidden-right {
@@ -211,6 +210,9 @@ nav ul li a:hover {
   width: 100%;
   max-width: 1400px;
   margin: 5vh auto;
+}
+.me-card:nth-child(2) {
+  flex-direction: row-reverse;
 }
 
 .me-text {
