@@ -1,47 +1,40 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
 import { meCards } from '../data/portfolioData';
 
-/**
- * MeCard
- * A single "about me" card with a text block and a photo.
- * Even-indexed cards reverse their row direction (matching .me-card:nth-child(2)).
- * The useScrollReveal hook adds the "show" class when the card enters the viewport,
- * triggering the slide-in CSS transition.
- */
-function MeCard({ card, index }) {
-  const ref = useScrollReveal();
-
-  // Alternate layout: even cards flip the image/text order
-  const isReversed = index % 2 === 1;
+function MeStrip({ card, isLast }) {
+  const reversed = card.photoSide === 'right';
 
   return (
-    <div
-      ref={ref}
-      className={`me-card ${card.animation}`}
-    >
-      <div className="me-text">
-        <p>{card.text}</p>
-      </div>
-      <div className="me-img">
+    <div className={`me-strip${reversed ? ' me-strip--reversed' : ''}${isLast ? ' me-strip--last' : ''}`}>
+      <div className="me-photo">
         <img src={card.img} alt={card.imgAlt} />
+        <span className="me-photo-tag">{card.photoTag}</span>
+      </div>
+      <div className="me-strip-text">
+        <p className="me-strip-label">{card.label}</p>
+        <h3 className="me-strip-heading">
+          {card.heading.split('\n').map((line, i, arr) => (
+            <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+          ))}
+        </h3>
+        <p className="me-strip-body">{card.text}</p>
       </div>
     </div>
   );
 }
 
-/**
- * MeSection
- * Renders the "Me" heading and all MeCard instances.
- */
 export default function MeSection() {
   return (
-    <>
-      <h2 id="me" className="section-title">Me</h2>
-      <div className="hero-me">
-        {meCards.map((card, index) => (
-          <MeCard key={card.id} card={card} index={index} />
-        ))}
+    <div id="me" className="me-wrap">
+      <div className="me-eyebrow-bar">
+        <span>&gt; me</span>
       </div>
-    </>
+      {meCards.map((card, index) => (
+        <MeStrip
+          key={card.id}
+          card={card}
+          isLast={index === meCards.length - 1}
+        />
+      ))}
+    </div>
   );
 }

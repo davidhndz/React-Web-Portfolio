@@ -18,24 +18,33 @@ export const personal = {
 export const meCards = [
   {
     id: 1,
-    text: "Hello there, it's great to see you. I'm someone who enjoys building things whether that's technology, community, or a really good meal in the kitchen. My background in construction and tech has shaped how I think: I like solving real problems and creating tools that make life a little more efficient and a little more fair. I'm especially interested in how AI and data can improve industries that don't always get the spotlight.",
-    img: '/img/me.jpg',
-    imgAlt: 'A photo of me (David)',
-    animation: 'hidden-left',
-  },
-  {
-    id: 2,
+    label: '01 / life outside the screen',
+    heading: 'Staying active,\nstaying curious.',
     text: "Outside of work and school, I'm happiest staying active and exploring. I enjoy cooking, traveling to new places, skating when I need to clear my head, and playing soccer whenever I get the chance. I appreciate experiences that challenge me and push me to grow.",
     img: '/img/skate.jpg',
     imgAlt: 'A photo of me skating',
-    animation: 'hidden-right',
+    photoTag: 'outside work & school',
+    photoSide: 'left',
+  },
+  {
+    id: 2,
+    label: "02 / what I'm built on",
+    heading: 'Family, commitment,\nand curiosity.',
+    text: "At the core, I value family, commitment, and curiosity. I believe progress happens when people support each other, share what they know, and aren't afraid to try something new. I'm always looking to learn, build, and contribute wherever I can.",
+    img: '/img/family.JPG',
+    imgAlt: 'A photo of me and my family',
+    photoTag: 'the people behind it all',
+    photoSide: 'right',
   },
   {
     id: 3,
-    text: "At the core, I value family, commitment, and curiosity. I believe progress happens when people support each other, share what they know, and aren't afraid to try something new. I'm always looking to learn, build, and contribute wherever I can.",
-    img: '/img/family.JPG',
-    imgAlt: 'A photo of me and my cousins',
-    animation: 'hidden-left',
+    label: '03 / the bigger picture',
+    heading: 'Tech that works\nfor everyone.',
+    text: "I'm especially interested in how AI and data can improve industries that don't always get the spotlight. My background in construction and tech has shaped how I think. I like solving real problems and creating tools that make life a little more efficient and a little more fair.",
+    img: '/img/me.jpg',
+    imgAlt: 'A photo of me',
+    photoTag: 'always building',
+    photoSide: 'left',
   },
 ];
 
@@ -46,7 +55,8 @@ export const experiences = [
     logo: '/img/HARDLINE-APP-ICON.png',
     logoAlt: 'Hardline AI logo',
     title: 'Software Engineer Intern',
-    company: 'Hardline AI — Santa Monica, CA',
+    company: 'Hardline AI',
+    location: 'Santa Monica, CA',
     date: 'Oct 2025 – Dec 2025',
     bullets: [
       'Maintained production infrastructure for an AI-powered VoIP platform on AWS (EC2, S3, Lambda), automating secure data workflows and contributing to system reliability.',
@@ -66,7 +76,8 @@ export const experiences = [
     logo: '/img/LAUSD_seal.png',
     logoAlt: 'LAUSD logo',
     title: 'Special Education Paraprofessional',
-    company: 'LAUSD — Los Angeles, CA',
+    company: 'LAUSD',
+    location: 'Los Angeles, CA',
     date: 'Sep 2024 – Present',
     bullets: [
       'Collaborated with educators and support staff to implement structured, individualized learning plans for students with diverse needs.',
@@ -87,6 +98,8 @@ export const projects = [
   {
     id: 1,
     title: 'FlappyBird DQN',
+    emoji: '🐦',
+    sublabel: '01 / reinforcement learning',
     img: '/img/flappybird-project.jpg',
     bullets: [
       'Built a DQN agent that learns to play Flappy Bird via reinforcement learning, improving performance over time through reward-based feedback.',
@@ -100,6 +113,8 @@ export const projects = [
   {
     id: 2,
     title: 'Sudoku-Solver',
+    emoji: '🔢',
+    sublabel: '02 / algorithms',
     img: '/img/sudoku-project.jpg',
     bullets: [
       'Built a Sudoku solver using a recursive backtracking algorithm to find valid number placements.',
@@ -113,6 +128,8 @@ export const projects = [
   {
     id: 3,
     title: 'BookStore Inventory App',
+    emoji: '📚',
+    sublabel: '03 / object-oriented design',
     img: '/img/bookstore-project.jpg',
     bullets: [
       'Built a console-based inventory system in C++ modeling books, CDs, and DVDs through class hierarchies.',
