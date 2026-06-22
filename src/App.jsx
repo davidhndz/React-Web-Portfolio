@@ -31,13 +31,13 @@ export default function App() {
       <div className="container">
         <div className="hero">
           <HeroSection />
-          <MeSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <ContactSection />
         </div>
-        <Footer />
       </div>
+      <MeSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <ContactSection />
+      <Footer />
     </>
   );
 }

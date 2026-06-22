@@ -30,10 +30,10 @@ export default function Navbar() {
 
       {/* Nav links — "open" class makes them visible on mobile */}
       <ul id="nav-links" className={menuOpen ? 'open' : ''}>
-        <li><a href="#me"         onClick={handleLinkClick}>About</a></li>
-        <li><a href="#experience" onClick={handleLinkClick}>Experience</a></li>
-        <li><a href="#projects"   onClick={handleLinkClick}>Portfolio</a></li>
-        <li><a href="#contact"    onClick={handleLinkClick}>Contact</a></li>
+        <li><a href="#me"         onClick={handleLinkClick}>me</a></li>
+        <li><a href="#experience" onClick={handleLinkClick}>experience</a></li>
+        <li><a href="#projects"   onClick={handleLinkClick}>projects</a></li>
+        <li><a href="#contact"    onClick={handleLinkClick}>contact</a></li>
       </ul>
     </nav>
   );
