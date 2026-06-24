@@ -33,11 +33,16 @@ export default function App() {
           <HeroSection />
         </div>
       </div>
-      <MeSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
+        <div className="body-container">
+
+            <MeSection />
+            <ExperienceSection />
+            <ProjectsSection />
+            <ContactSection />
+            <Footer />
+        </div>
+
+
     </>
   );
 }
